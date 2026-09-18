@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>EMPLOYEE MANAGEMENT SYSTEM</h1>
+
+        <div class="datetime">
+            <span id="today"></span>
+            <span id="currentTime"></span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Search -->
+        <section class="search-section">
+            <label for="searchInput">Search Employee:</label>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Enter employee name..."
+                >
+
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <!-- Department Filters -->
+        <section class="filters">
+            <button class="department-btn active" data-department="All">
+                All Employees
+            </button>
+
+            <button class="department-btn" data-department="IT">
+                IT
+            </button>
+
+            <button class="department-btn" data-department="HR">
+                HR
+            </button>
+
+            <button class="department-btn" data-department="Finance">
+                Finance
+            </button>
+
+            <button class="department-btn" data-department="Marketing">
+                Marketing
+            </button>
+        </section>
+
+        <!-- Status -->
+        <div id="statusMessage" class="status-message">
+            Loading employees...
+        </div>
+
+        <!-- Statistics -->
+        <section class="statistics">
+
+            <div class="stat-card">
+                <h3>Total Employees</h3>
+                <p id="employeeCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Salary</h3>
+                <p id="totalSalary">₹0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Average Salary</h3>
+                <p id="averageSalary">₹0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Highest Paid</h3>
+                <p id="highestPaid">None</p>
+            </div>
+
+        </section>
+
+        <!-- Sorting -->
+        <section class="sort-section">
+            <label for="sortSelect">Sort Employees:</label>
+
+            <select id="sortSelect">
+                <option value="none">Default</option>
+                <option value="name-asc">Name ↑</option>
+                <option value="name-desc">Name ↓</option>
+                <option value="age-asc">Age ↑</option>
+                <option value="age-desc">Age ↓</option>
+                <option value="salary-asc">Salary ↑</option>
+                <option value="salary-desc">Salary ↓</option>
+            </select>
+        </section>
+
+        <!-- Employee Cards -->
+        <section id="employeeContainer" class="employee-grid">
+            <!-- Cards generated using JavaScript -->
+        </section>
+
+        <!-- Add Employee -->
+        <section class="add-section">
+
+            <h2>ADD EMPLOYEE</h2>
+
+            <form id="employeeForm">
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter employee name"
+                    >
+                    <small id="nameError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="Enter age"
+                    >
+                    <small id="ageError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email"
+                    >
+                    <small id="emailError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+
+                    <select id="department">
+                        <option value="">Select Department</option>
+                        <option value="IT">IT</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+
+                    <small id="departmentError" class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="salary">Salary</label>
+
+                    <input
+                        type="number"
+                        id="salary"
+                        placeholder="Example: 50000"
+                    >
+
+                    <small id="salaryError" class="error"></small>
+                </div>
+
+                <button type="submit" class="add-btn">
+                    Add Employee
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="script8.js"></script>
+
+</body>
+</html>
